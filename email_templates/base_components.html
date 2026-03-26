@@ -1,0 +1,977 @@
+<!--
+===================================================================================
+  YAY'S BEEF CRISPS — EMAIL COMPONENT LIBRARY
+  Version 2.0 | frontend-design enhanced
+===================================================================================
+  HOW TO USE THIS FILE:
+  This is a reference library for the Structure Agent (step2a). When building an
+  email HTML skeleton, use these components as exact building blocks. Copy the
+  relevant sections, keep all inline CSS intact, and replace {{token}} placeholders
+  with the appropriate token names from the brief.
+
+  RULES:
+  - ALL CSS must remain inline. The only <style> block allowed is in <head> for
+    media queries.
+  - Every {{...}} in the output html_skeleton must appear in token_manifest.
+  - Choose components that match the brief's sections — not all components are
+    used in every email.
+  - Combine and layer components freely — e.g., ANNOUNCEMENT STRIP before HEADER,
+    HERO + TEXT BLOCK + CTA as a single section flow.
+  - Gold (#FFB800) accents = celebration, feature highlights, discount callouts.
+  - Red (#D32F2F) = urgency, CTAs, limited-time offers.
+  - Navy (#2c5f7f) = primary brand color, headers, footers, product names.
+===================================================================================
+-->
+
+
+<!-- ===================================================================================
+     COMPONENT: DOCUMENT WRAPPER
+     Full HTML email boilerplate. Always wrap the entire email in this.
+     =================================================================================== -->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no,date=no,address=no,email=no">
+  <meta name="x-apple-disable-message-reformatting">
+  <title>{{email_subject}}</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <style>
+    body { font-family: Arial, sans-serif !important; }
+    table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; }
+  </style>
+  <![endif]-->
+  <style type="text/css">
+    /* Reset */
+    body, table, td, p, a, li { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; }
+    a { text-decoration: none; }
+
+    /* Mobile breakpoint */
+    @media only screen and (max-width: 620px) {
+      .mobile-full    { width: 100% !important; max-width: 100% !important; display: block !important; }
+      .mobile-pad     { padding: 20px 16px !important; }
+      .mobile-pad-sm  { padding: 12px 16px !important; }
+      .mobile-text-center { text-align: center !important; }
+      .mobile-text-left   { text-align: left !important; }
+      .mobile-hide    { display: none !important; max-height: 0 !important; overflow: hidden !important; mso-hide: all !important; }
+      .mobile-show    { display: block !important; max-height: none !important; }
+      .mobile-stack   { display: block !important; width: 100% !important; }
+      .mobile-font-xl { font-size: 42px !important; line-height: 1.1 !important; }
+      .mobile-font-lg { font-size: 28px !important; }
+      .mobile-font-md { font-size: 18px !important; }
+      .mobile-img-full { width: 100% !important; height: auto !important; }
+      .mobile-btn-full { width: 100% !important; display: block !important; text-align: center !important; }
+      .mobile-center-block { margin: 0 auto !important; float: none !important; }
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;background-color:#f0ede8;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+
+<!-- Preheader (hidden, shows in inbox preview) -->
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;color:#f0ede8;line-height:1px;">{{preheader_text}}&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;</div>
+
+<!-- OUTER WRAPPER TABLE -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f0ede8;min-width:100%;">
+<tr>
+  <td align="center" style="padding:20px 10px;">
+
+    <!-- EMAIL CONTAINER (600px) -->
+    <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" class="mobile-full" style="max-width:600px;width:100%;background-color:#ffffff;border-radius:4px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.10);">
+
+      <!-- === INSERT COMPONENTS HERE === -->
+
+    </table>
+    <!-- END EMAIL CONTAINER -->
+
+  </td>
+</tr>
+</table>
+<!-- END OUTER WRAPPER -->
+
+</body>
+</html>
+
+
+<!-- ===================================================================================
+     COMPONENT: ANNOUNCEMENT BAR (optional — use above header for campaign alerts)
+     Variants: gold, red urgency, subtle navy
+     =================================================================================== -->
+
+<!-- VARIANT A: Gold announcement bar -->
+<tr>
+  <td style="background-color:#FFB800;padding:10px 30px;text-align:center;">
+    <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:16px;letter-spacing:2px;color:#1a1a1a;margin:0;line-height:1.2;">{{announcement_text}}</p>
+  </td>
+</tr>
+
+<!-- VARIANT B: Red urgency announcement bar -->
+<tr>
+  <td style="background-color:#D32F2F;padding:10px 30px;text-align:center;">
+    <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:16px;letter-spacing:3px;color:#ffffff;margin:0;line-height:1.2;">⚡ {{urgency_announcement_text}} ⚡</p>
+  </td>
+</tr>
+
+<!-- VARIANT C: Subtle navy info bar -->
+<tr>
+  <td style="background-color:#2c5f7f;padding:8px 30px;text-align:center;">
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:13px;color:#aaccdd;margin:0;letter-spacing:0.5px;">{{info_bar_text}}</p>
+  </td>
+</tr>
+
+
+<!-- ===================================================================================
+     COMPONENT: HEADER
+     Variants: logo image, text-only, logo + tagline
+     =================================================================================== -->
+
+<!-- VARIANT A: Header with logo image + gold bottom border -->
+<tr>
+  <td style="background-color:#2c5f7f;padding:28px 30px 24px;text-align:center;border-bottom:4px solid #FFB800;">
+    <a href="https://www.yaysbeefcrisps.com" style="display:inline-block;text-decoration:none;">
+      <img src="{{header_logo_image}}" alt="{{header_logo_alt}}" width="160" style="display:block;width:160px;height:auto;border:0;margin:0 auto;">
+    </a>
+  </td>
+</tr>
+
+<!-- VARIANT B: Text-only header (bold brand name) -->
+<tr>
+  <td style="background-color:#2c5f7f;padding:28px 30px 24px;text-align:center;border-bottom:4px solid #FFB800;">
+    <a href="https://www.yaysbeefcrisps.com" style="text-decoration:none;">
+      <span style="font-family:'Bebas Neue',Impact,sans-serif;font-size:36px;letter-spacing:4px;color:#FFB800;display:block;line-height:1;">YAY'S</span>
+      <span style="font-family:'Outfit',Arial,sans-serif;font-size:11px;letter-spacing:4px;color:#aaccdd;display:block;text-transform:uppercase;margin-top:3px;">BEEF CRISPS</span>
+    </a>
+  </td>
+</tr>
+
+<!-- VARIANT C: Header with logo + campaign tagline pill -->
+<tr>
+  <td style="background-color:#1a1a1a;padding:28px 30px 24px;text-align:center;">
+    <a href="https://www.yaysbeefcrisps.com" style="display:inline-block;text-decoration:none;">
+      <img src="{{header_logo_image}}" alt="{{header_logo_alt}}" width="140" style="display:block;width:140px;height:auto;border:0;margin:0 auto 12px;">
+    </a>
+    <span style="display:inline-block;background-color:#FFB800;font-family:'Bebas Neue',Impact,sans-serif;font-size:13px;letter-spacing:2px;color:#1a1a1a;padding:4px 14px;border-radius:20px;">{{header_campaign_label}}</span>
+  </td>
+</tr>
+
+
+<!-- ===================================================================================
+     COMPONENT: HERO BANNER
+     Variants: full-bleed image, image with text overlay, split hero
+     =================================================================================== -->
+
+<!-- VARIANT A: Full-bleed hero image (no text) -->
+<tr>
+  <td style="padding:0;line-height:0;font-size:0;">
+    <a href="{{hero_cta_link}}" style="display:block;text-decoration:none;">
+      <img src="{{hero_image}}" alt="{{hero_image_alt}}" width="600" style="display:block;width:100%;height:auto;border:0;">
+    </a>
+  </td>
+</tr>
+
+<!-- VARIANT B: Hero image with bold text overlay (dark gradient bottom) -->
+<tr>
+  <td style="padding:0;position:relative;line-height:0;font-size:0;">
+    <!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td style="padding:0;"><![endif]-->
+    <div style="position:relative;display:block;line-height:0;">
+      <img src="{{hero_image}}" alt="{{hero_image_alt}}" width="600" style="display:block;width:100%;height:auto;border:0;">
+      <div style="background:linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(26,26,26,0.92) 100%);padding:0 40px 36px;margin-top:-160px;position:relative;">
+        <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:52px;line-height:1;color:#FFB800;margin:0 0 6px;letter-spacing:2px;text-shadow:0 2px 8px rgba(0,0,0,0.5);">{{hero_headline}}</p>
+        <p style="font-family:'Outfit',Arial,sans-serif;font-size:17px;color:#ffffff;margin:0;opacity:0.9;">{{hero_subheadline}}</p>
+      </div>
+    </div>
+    <!--[if mso]></td></tr></table><![endif]-->
+  </td>
+</tr>
+
+<!-- VARIANT C: Split hero — image left (60%), bold headline right (40%) on navy -->
+<tr>
+  <td style="padding:0;background-color:#2c5f7f;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td width="360" class="mobile-stack" style="padding:0;vertical-align:middle;line-height:0;">
+        <img src="{{hero_image}}" alt="{{hero_image_alt}}" width="360" style="display:block;width:100%;height:auto;border:0;">
+      </td>
+      <td width="240" class="mobile-stack mobile-pad" style="padding:32px 28px;vertical-align:middle;text-align:left;background-color:#2c5f7f;">
+        <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:46px;line-height:0.95;color:#FFB800;margin:0 0 12px;letter-spacing:1px;">{{hero_headline}}</p>
+        <p style="font-family:'Outfit',Arial,sans-serif;font-size:15px;line-height:1.55;color:#ffffff;margin:0 0 20px;opacity:0.9;">{{hero_subheadline}}</p>
+        <a href="{{hero_cta_link}}" style="display:inline-block;background-color:#D32F2F;color:#ffffff;font-family:'Bebas Neue',Impact,sans-serif;font-size:18px;letter-spacing:1.5px;padding:12px 26px;text-decoration:none;border-radius:4px;">{{hero_cta_text}}</a>
+      </td>
+    </tr>
+    </table>
+  </td>
+</tr>
+
+<!-- VARIANT D: Full-bleed hero with centered headline on colored band below image -->
+<tr>
+  <td style="padding:0;">
+    <img src="{{hero_image}}" alt="{{hero_image_alt}}" width="600" style="display:block;width:100%;height:auto;border:0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td style="background-color:#FFB800;padding:18px 30px;text-align:center;">
+        <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:40px;color:#1a1a1a;margin:0;letter-spacing:2px;line-height:1.05;">{{hero_headline}}</p>
+        <p style="font-family:'Outfit',Arial,sans-serif;font-size:15px;color:#1a1a1a;margin:6px 0 0;opacity:0.8;">{{hero_subheadline}}</p>
+      </td>
+    </tr>
+    </table>
+  </td>
+</tr>
+
+
+<!-- ===================================================================================
+     COMPONENT: TEXT BLOCK
+     Variants: standard h1+body, centered decorative headline, accent border intro
+     =================================================================================== -->
+
+<!-- VARIANT A: Standard text block — h1 headline + body copy -->
+<tr>
+  <td style="padding:40px 44px 32px;background-color:#ffffff;">
+    <h1 style="font-family:'Bebas Neue',Impact,sans-serif;font-size:38px;line-height:1.05;color:#2c5f7f;margin:0 0 14px;letter-spacing:1px;">{{section_headline}}</h1>
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:16px;line-height:1.65;color:#333333;margin:0;">{{section_body_copy}}</p>
+  </td>
+</tr>
+
+<!-- VARIANT B: Centered decorative headline with gold rule + body -->
+<tr>
+  <td style="padding:44px 44px 36px;background-color:#ffffff;text-align:center;">
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:12px;letter-spacing:4px;color:#FFA000;text-transform:uppercase;margin:0 0 10px;">{{section_eyebrow}}</p>
+    <h1 style="font-family:'Bebas Neue',Impact,sans-serif;font-size:52px;line-height:1;color:#1a1a1a;margin:0 0 16px;letter-spacing:2px;">{{section_headline}}</h1>
+    <!-- Gold rule -->
+    <table role="presentation" width="60" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 20px;">
+      <tr><td style="height:4px;background-color:#FFB800;border-radius:2px;font-size:0;line-height:0;">&nbsp;</td></tr>
+    </table>
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:16px;line-height:1.65;color:#555555;margin:0;max-width:460px;margin-left:auto;margin-right:auto;">{{section_body_copy}}</p>
+  </td>
+</tr>
+
+<!-- VARIANT C: Intro paragraph with gold left-border accent -->
+<tr>
+  <td style="padding:36px 44px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td width="5" style="background-color:#FFB800;border-radius:3px;font-size:0;line-height:0;">&nbsp;</td>
+      <td style="padding:4px 0 4px 20px;">
+        <h2 style="font-family:'Bebas Neue',Impact,sans-serif;font-size:28px;color:#2c5f7f;margin:0 0 10px;letter-spacing:0.5px;">{{section_headline}}</h2>
+        <p style="font-family:'Outfit',Arial,sans-serif;font-size:16px;line-height:1.65;color:#333333;margin:0;">{{section_body_copy}}</p>
+      </td>
+    </tr>
+    </table>
+  </td>
+</tr>
+
+<!-- VARIANT D: Cream background editorial text block -->
+<tr>
+  <td style="padding:40px 44px;background-color:#FFF8E1;">
+    <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:13px;letter-spacing:4px;color:#FFA000;text-transform:uppercase;margin:0 0 10px;">{{section_eyebrow}}</p>
+    <h2 style="font-family:'Bebas Neue',Impact,sans-serif;font-size:34px;color:#1a1a1a;margin:0 0 14px;letter-spacing:1px;">{{section_headline}}</h2>
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:16px;line-height:1.7;color:#444444;margin:0;">{{section_body_copy}}</p>
+  </td>
+</tr>
+
+
+<!-- ===================================================================================
+     COMPONENT: CTA BUTTON
+     Variants: primary red, secondary navy outline, ghost white, inline text link
+     =================================================================================== -->
+
+<!-- VARIANT A: Primary CTA — Red, Bebas Neue, full padding (use in most CTAs) -->
+<tr>
+  <td style="padding:8px 44px 36px;text-align:center;">
+    <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{cta_link}}" style="height:52px;v-text-anchor:middle;width:220px;" arcsize="8%" stroke="f" fillcolor="#D32F2F"><w:anchorlock/><center style="color:#ffffff;font-family:Arial,sans-serif;font-size:20px;font-weight:bold;">{{cta_text}}</center></v:roundrect><![endif]-->
+    <!--[if !mso]><!-->
+    <a href="{{cta_link}}" class="mobile-btn-full" style="display:inline-block;background-color:#D32F2F;color:#ffffff;font-family:'Bebas Neue',Impact,sans-serif;font-size:22px;letter-spacing:2px;padding:15px 44px;text-decoration:none;border-radius:5px;mso-hide:all;line-height:1;">{{cta_text}}</a>
+    <!--<![endif]-->
+  </td>
+</tr>
+
+<!-- VARIANT B: Primary CTA on navy background (use after dark sections) -->
+<tr>
+  <td style="padding:8px 44px 36px;text-align:center;background-color:#2c5f7f;">
+    <a href="{{cta_link}}" class="mobile-btn-full" style="display:inline-block;background-color:#FFB800;color:#1a1a1a;font-family:'Bebas Neue',Impact,sans-serif;font-size:22px;letter-spacing:2px;padding:15px 44px;text-decoration:none;border-radius:5px;line-height:1;">{{cta_text}}</a>
+  </td>
+</tr>
+
+<!-- VARIANT C: Secondary CTA — navy outline style -->
+<tr>
+  <td style="padding:8px 44px 36px;text-align:center;">
+    <a href="{{cta_link}}" class="mobile-btn-full" style="display:inline-block;background-color:transparent;color:#2c5f7f;font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;letter-spacing:2px;padding:13px 40px;text-decoration:none;border-radius:5px;border:2px solid #2c5f7f;line-height:1;">{{cta_text}}</a>
+  </td>
+</tr>
+
+<!-- VARIANT D: Ghost CTA — white outline on dark background -->
+<tr>
+  <td style="padding:8px 44px 36px;text-align:center;background-color:#1a1a1a;">
+    <a href="{{cta_link}}" class="mobile-btn-full" style="display:inline-block;background-color:transparent;color:#ffffff;font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;letter-spacing:2px;padding:13px 40px;text-decoration:none;border-radius:5px;border:2px solid rgba(255,255,255,0.6);line-height:1;">{{cta_text}}</a>
+  </td>
+</tr>
+
+<!-- VARIANT E: Inline text link CTA with arrow -->
+<tr>
+  <td style="padding:4px 44px 28px;">
+    <a href="{{cta_link}}" style="font-family:'Outfit',Arial,sans-serif;font-size:15px;font-weight:700;color:#D32F2F;text-decoration:none;letter-spacing:0.3px;">{{cta_text}} &rarr;</a>
+  </td>
+</tr>
+
+<!-- VARIANT F: Dual CTA buttons side by side -->
+<tr>
+  <td style="padding:8px 30px 36px;text-align:center;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
+    <tr>
+      <td style="padding-right:12px;">
+        <a href="{{cta_primary_link}}" style="display:inline-block;background-color:#D32F2F;color:#ffffff;font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;letter-spacing:2px;padding:14px 32px;text-decoration:none;border-radius:5px;line-height:1;">{{cta_primary_text}}</a>
+      </td>
+      <td>
+        <a href="{{cta_secondary_link}}" style="display:inline-block;background-color:transparent;color:#2c5f7f;font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;letter-spacing:2px;padding:12px 32px;text-decoration:none;border-radius:5px;border:2px solid #2c5f7f;line-height:1;">{{cta_secondary_text}}</a>
+      </td>
+    </tr>
+    </table>
+  </td>
+</tr>
+
+
+<!-- ===================================================================================
+     COMPONENT: PRODUCT CARD
+     Variants: single, 2-col grid, 3-col grid, horizontal card
+     All use {{product_N_*}} token pattern.
+     =================================================================================== -->
+
+<!-- VARIANT A: Single product feature card — large, centered, premium feel -->
+<tr>
+  <td style="padding:36px 44px;text-align:center;background-color:#ffffff;">
+    <a href="{{product_1_link}}" style="display:block;text-decoration:none;">
+      <img src="{{product_1_image}}" alt="{{product_1_name}}" width="280" style="display:block;margin:0 auto 20px;width:280px;height:auto;border:0;">
+    </a>
+    <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:26px;color:#2c5f7f;margin:0 0 6px;letter-spacing:1px;">{{product_1_name}}</p>
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:14px;line-height:1.55;color:#666666;margin:0 0 8px;max-width:360px;margin-left:auto;margin-right:auto;">{{product_1_description}}</p>
+    <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:28px;color:#D32F2F;margin:0 0 18px;">{{product_1_price}}</p>
+    <a href="{{product_1_link}}" style="display:inline-block;background-color:#D32F2F;color:#ffffff;font-family:'Bebas Neue',Impact,sans-serif;font-size:18px;letter-spacing:1.5px;padding:12px 32px;text-decoration:none;border-radius:4px;">SHOP NOW</a>
+  </td>
+</tr>
+
+<!-- VARIANT B: 2-col product grid -->
+<tr>
+  <td style="padding:32px 24px;background-color:#ffffff;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <!-- Product 1 -->
+      <td width="50%" class="mobile-stack" style="padding:12px;vertical-align:top;text-align:center;">
+        <a href="{{product_1_link}}" style="display:block;text-decoration:none;">
+          <img src="{{product_1_image}}" alt="{{product_1_name}}" width="220" style="display:block;margin:0 auto 14px;width:100%;max-width:220px;height:auto;border:0;border-radius:3px;">
+        </a>
+        <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;color:#2c5f7f;margin:0 0 4px;letter-spacing:0.5px;">{{product_1_name}}</p>
+        <p style="font-family:'Outfit',Arial,sans-serif;font-size:13px;color:#888888;margin:0 0 6px;">{{product_1_flavor}}</p>
+        <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:22px;color:#D32F2F;margin:0 0 12px;">{{product_1_price}}</p>
+        <a href="{{product_1_link}}" style="display:inline-block;background-color:#2c5f7f;color:#ffffff;font-family:'Outfit',Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:9px 22px;text-decoration:none;border-radius:4px;">Shop Now</a>
+      </td>
+      <!-- Product 2 -->
+      <td width="50%" class="mobile-stack" style="padding:12px;vertical-align:top;text-align:center;">
+        <a href="{{product_2_link}}" style="display:block;text-decoration:none;">
+          <img src="{{product_2_image}}" alt="{{product_2_name}}" width="220" style="display:block;margin:0 auto 14px;width:100%;max-width:220px;height:auto;border:0;border-radius:3px;">
+        </a>
+        <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;color:#2c5f7f;margin:0 0 4px;letter-spacing:0.5px;">{{product_2_name}}</p>
+        <p style="font-family:'Outfit',Arial,sans-serif;font-size:13px;color:#888888;margin:0 0 6px;">{{product_2_flavor}}</p>
+        <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:22px;color:#D32F2F;margin:0 0 12px;">{{product_2_price}}</p>
+        <a href="{{product_2_link}}" style="display:inline-block;background-color:#2c5f7f;color:#ffffff;font-family:'Outfit',Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:9px 22px;text-decoration:none;border-radius:4px;">Shop Now</a>
+      </td>
+    </tr>
+    </table>
+  </td>
+</tr>
+
+<!-- VARIANT C: 3-col product grid (compact) -->
+<tr>
+  <td style="padding:28px 16px;background-color:#ffffff;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <!-- Product 1 -->
+      <td width="33%" class="mobile-stack" style="padding:8px;vertical-align:top;text-align:center;">
+        <a href="{{product_1_link}}" style="display:block;text-decoration:none;">
+          <img src="{{product_1_image}}" alt="{{product_1_name}}" width="150" style="display:block;margin:0 auto 10px;width:100%;max-width:150px;height:auto;border:0;">
+        </a>
+        <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:17px;color:#2c5f7f;margin:0 0 3px;letter-spacing:0.5px;">{{product_1_name}}</p>
+        <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:19px;color:#D32F2F;margin:0 0 10px;">{{product_1_price}}</p>
+        <a href="{{product_1_link}}" style="font-family:'Outfit',Arial,sans-serif;font-size:12px;font-weight:700;color:#2c5f7f;text-decoration:underline;letter-spacing:0.5px;text-transform:uppercase;">Shop &rarr;</a>
+      </td>
+      <!-- Product 2 -->
+      <td width="33%" class="mobile-stack" style="padding:8px;vertical-align:top;text-align:center;border-left:1px solid #eeeeee;border-right:1px solid #eeeeee;">
+        <a href="{{product_2_link}}" style="display:block;text-decoration:none;">
+          <img src="{{product_2_image}}" alt="{{product_2_name}}" width="150" style="display:block;margin:0 auto 10px;width:100%;max-width:150px;height:auto;border:0;">
+        </a>
+        <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:17px;color:#2c5f7f;margin:0 0 3px;letter-spacing:0.5px;">{{product_2_name}}</p>
+        <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:19px;color:#D32F2F;margin:0 0 10px;">{{product_2_price}}</p>
+        <a href="{{product_2_link}}" style="font-family:'Outfit',Arial,sans-serif;font-size:12px;font-weight:700;color:#2c5f7f;text-decoration:underline;letter-spacing:0.5px;text-transform:uppercase;">Shop &rarr;</a>
+      </td>
+      <!-- Product 3 -->
+      <td width="33%" class="mobile-stack" style="padding:8px;vertical-align:top;text-align:center;">
+        <a href="{{product_3_link}}" style="display:block;text-decoration:none;">
+          <img src="{{product_3_image}}" alt="{{product_3_name}}" width="150" style="display:block;margin:0 auto 10px;width:100%;max-width:150px;height:auto;border:0;">
+        </a>
+        <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:17px;color:#2c5f7f;margin:0 0 3px;letter-spacing:0.5px;">{{product_3_name}}</p>
+        <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:19px;color:#D32F2F;margin:0 0 10px;">{{product_3_price}}</p>
+        <a href="{{product_3_link}}" style="font-family:'Outfit',Arial,sans-serif;font-size:12px;font-weight:700;color:#2c5f7f;text-decoration:underline;letter-spacing:0.5px;text-transform:uppercase;">Shop &rarr;</a>
+      </td>
+    </tr>
+    </table>
+  </td>
+</tr>
+
+<!-- VARIANT D: Horizontal product card (image left, content right) — great for featured products -->
+<tr>
+  <td style="padding:20px 32px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #eeeeee;border-radius:6px;overflow:hidden;">
+    <tr>
+      <td width="180" class="mobile-stack" style="padding:0;vertical-align:middle;background-color:#FFF8E1;">
+        <a href="{{product_1_link}}" style="display:block;text-decoration:none;">
+          <img src="{{product_1_image}}" alt="{{product_1_name}}" width="180" style="display:block;width:100%;height:auto;border:0;">
+        </a>
+      </td>
+      <td class="mobile-stack mobile-pad" style="padding:24px 24px;vertical-align:middle;">
+        <p style="font-family:'Outfit',Arial,sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#FFA000;margin:0 0 6px;">{{product_1_badge}}</p>
+        <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:24px;color:#2c5f7f;margin:0 0 6px;letter-spacing:0.5px;">{{product_1_name}}</p>
+        <p style="font-family:'Outfit',Arial,sans-serif;font-size:14px;line-height:1.55;color:#555555;margin:0 0 14px;">{{product_1_description}}</p>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="padding-right:20px;vertical-align:middle;">
+            <span style="font-family:'Bebas Neue',Impact,sans-serif;font-size:28px;color:#D32F2F;">{{product_1_price}}</span>
+          </td>
+          <td style="vertical-align:middle;">
+            <a href="{{product_1_link}}" style="display:inline-block;background-color:#D32F2F;color:#ffffff;font-family:'Bebas Neue',Impact,sans-serif;font-size:16px;letter-spacing:1.5px;padding:10px 22px;text-decoration:none;border-radius:4px;">ADD TO CART</a>
+          </td>
+        </tr>
+        </table>
+      </td>
+    </tr>
+    </table>
+  </td>
+</tr>
+
+<!-- VARIANT E: Product card with "NEW" or "BESTSELLER" badge ribbon -->
+<tr>
+  <td style="padding:28px 44px;text-align:center;background-color:#ffffff;">
+    <!-- Badge pill above image -->
+    <div style="display:inline-block;background-color:#FFB800;font-family:'Bebas Neue',Impact,sans-serif;font-size:13px;letter-spacing:2px;color:#1a1a1a;padding:4px 14px;border-radius:20px;margin-bottom:14px;">{{product_1_badge}}</div>
+    <a href="{{product_1_link}}" style="display:block;text-decoration:none;">
+      <img src="{{product_1_image}}" alt="{{product_1_name}}" width="240" style="display:block;margin:0 auto 16px;width:240px;height:auto;border:0;">
+    </a>
+    <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:24px;color:#2c5f7f;margin:0 0 4px;letter-spacing:1px;">{{product_1_name}}</p>
+    <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:26px;color:#D32F2F;margin:0 0 16px;">{{product_1_price}}</p>
+    <a href="{{product_1_link}}" style="display:inline-block;background-color:#D32F2F;color:#ffffff;font-family:'Bebas Neue',Impact,sans-serif;font-size:18px;letter-spacing:1.5px;padding:12px 30px;text-decoration:none;border-radius:4px;">SHOP NOW</a>
+  </td>
+</tr>
+
+
+<!-- ===================================================================================
+     COMPONENT: DISCOUNT / PROMO BLOCK
+     Variants: hero banner, inline strip, copy mention
+     =================================================================================== -->
+
+<!-- VARIANT A: Hero discount banner — bold, full-width, high impact -->
+<tr>
+  <td style="background-color:#1a1a1a;padding:40px 44px;text-align:center;">
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:13px;letter-spacing:4px;text-transform:uppercase;color:#FFB800;margin:0 0 10px;">Exclusive Offer</p>
+    <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:64px;line-height:0.9;color:#ffffff;margin:0 0 6px;letter-spacing:3px;">{{discount_headline}}</p>
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:15px;color:#aaaaaa;margin:0 0 24px;">Use code at checkout:</p>
+    <!-- Discount code pill -->
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 24px;">
+    <tr>
+      <td style="background-color:#FFB800;border-radius:6px;padding:14px 36px;">
+        <span style="font-family:'Bebas Neue',Impact,sans-serif;font-size:40px;letter-spacing:6px;color:#1a1a1a;line-height:1;">{{discount_code}}</span>
+      </td>
+    </tr>
+    </table>
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:13px;color:#888888;margin:0;">{{discount_expiry_note}}</p>
+  </td>
+</tr>
+
+<!-- VARIANT B: Compact urgency discount strip (use between sections) -->
+<tr>
+  <td style="background-color:#D32F2F;padding:16px 30px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td style="vertical-align:middle;">
+        <span style="font-family:'Bebas Neue',Impact,sans-serif;font-size:22px;letter-spacing:2px;color:#ffffff;">⚡ {{discount_urgency_text}}</span>
+      </td>
+      <td style="text-align:right;vertical-align:middle;">
+        <span style="display:inline-block;background-color:#ffffff;font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;letter-spacing:3px;color:#D32F2F;padding:6px 18px;border-radius:4px;">{{discount_code}}</span>
+      </td>
+    </tr>
+    </table>
+  </td>
+</tr>
+
+<!-- VARIANT C: Gold discount strip with CTA -->
+<tr>
+  <td style="background-color:#FFB800;padding:20px 44px;text-align:center;">
+    <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:28px;letter-spacing:1.5px;color:#1a1a1a;margin:0 0 4px;">{{discount_offer_text}}</p>
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:14px;color:#333333;margin:0 0 12px;">Use code <strong>{{discount_code}}</strong> &mdash; {{discount_expiry_note}}</p>
+    <a href="{{cta_link}}" style="display:inline-block;background-color:#1a1a1a;color:#FFB800;font-family:'Bebas Neue',Impact,sans-serif;font-size:18px;letter-spacing:2px;padding:11px 30px;text-decoration:none;border-radius:4px;">CLAIM OFFER</a>
+  </td>
+</tr>
+
+<!-- VARIANT D: Subtle inline discount mention (within a text block context) -->
+<tr>
+  <td style="padding:24px 44px;background-color:#FFF8E1;border-left:4px solid #FFB800;">
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:15px;line-height:1.65;color:#333333;margin:0;">{{discount_inline_copy}} Use code <strong style="font-family:'Bebas Neue',Impact,sans-serif;font-size:18px;color:#D32F2F;letter-spacing:1px;">{{discount_code}}</strong> for {{discount_offer_text}}.</p>
+  </td>
+</tr>
+
+
+<!-- ===================================================================================
+     COMPONENT: TESTIMONIAL / REVIEW BLOCK
+     Variants: single quote card, 2-col quotes, star rating row
+     =================================================================================== -->
+
+<!-- VARIANT A: Single testimonial — centered card, navy accent -->
+<tr>
+  <td style="padding:40px 44px;background-color:#FFF8E1;text-align:center;">
+    <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:72px;line-height:0.6;color:#FFB800;margin:0 0 16px;">&ldquo;</p>
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:18px;line-height:1.65;color:#333333;font-style:italic;margin:0 0 18px;max-width:440px;margin-left:auto;margin-right:auto;">{{testimonial_1_quote}}</p>
+    <!-- Stars -->
+    <p style="font-size:18px;color:#FFB800;margin:0 0 8px;letter-spacing:3px;">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:13px;font-weight:700;color:#2c5f7f;margin:0;text-transform:uppercase;letter-spacing:1px;">{{testimonial_1_author}}</p>
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:12px;color:#888888;margin:3px 0 0;">{{testimonial_1_location}}</p>
+  </td>
+</tr>
+
+<!-- VARIANT B: 2-col testimonial grid -->
+<tr>
+  <td style="padding:32px 24px;background-color:#ffffff;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td width="50%" class="mobile-stack" style="padding:12px;vertical-align:top;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#FFF8E1;border-radius:6px;border-left:4px solid #FFB800;">
+        <tr>
+          <td style="padding:20px 18px;">
+            <p style="font-size:14px;color:#FFB800;margin:0 0 8px;letter-spacing:2px;">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p style="font-family:'Outfit',Arial,sans-serif;font-size:14px;line-height:1.6;color:#333333;font-style:italic;margin:0 0 12px;">&ldquo;{{testimonial_1_quote}}&rdquo;</p>
+            <p style="font-family:'Outfit',Arial,sans-serif;font-size:12px;font-weight:700;color:#2c5f7f;margin:0;text-transform:uppercase;letter-spacing:1px;">{{testimonial_1_author}}</p>
+          </td>
+        </tr>
+        </table>
+      </td>
+      <td width="50%" class="mobile-stack" style="padding:12px;vertical-align:top;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#FFF8E1;border-radius:6px;border-left:4px solid #FFB800;">
+        <tr>
+          <td style="padding:20px 18px;">
+            <p style="font-size:14px;color:#FFB800;margin:0 0 8px;letter-spacing:2px;">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p style="font-family:'Outfit',Arial,sans-serif;font-size:14px;line-height:1.6;color:#333333;font-style:italic;margin:0 0 12px;">&ldquo;{{testimonial_2_quote}}&rdquo;</p>
+            <p style="font-family:'Outfit',Arial,sans-serif;font-size:12px;font-weight:700;color:#2c5f7f;margin:0;text-transform:uppercase;letter-spacing:1px;">{{testimonial_2_author}}</p>
+          </td>
+        </tr>
+        </table>
+      </td>
+    </tr>
+    </table>
+  </td>
+</tr>
+
+<!-- VARIANT C: Star rating summary row (aggregate rating display) -->
+<tr>
+  <td style="padding:24px 44px;background-color:#ffffff;text-align:center;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
+    <tr>
+      <td style="padding-right:16px;vertical-align:middle;">
+        <span style="font-family:'Bebas Neue',Impact,sans-serif;font-size:42px;color:#2c5f7f;line-height:1;">{{rating_score}}</span>
+      </td>
+      <td style="vertical-align:middle;text-align:left;">
+        <p style="font-size:22px;color:#FFB800;margin:0 0 2px;letter-spacing:3px;">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+        <p style="font-family:'Outfit',Arial,sans-serif;font-size:13px;color:#888888;margin:0;">{{rating_count}} verified reviews</p>
+      </td>
+    </tr>
+    </table>
+  </td>
+</tr>
+
+
+<!-- ===================================================================================
+     COMPONENT: BENEFITS / FEATURES LIST
+     Variants: emoji icon rows, checklist, numbered steps
+     =================================================================================== -->
+
+<!-- VARIANT A: Emoji icon + text benefit rows -->
+<tr>
+  <td style="padding:36px 44px;background-color:#FFF8E1;">
+    <h2 style="font-family:'Bebas Neue',Impact,sans-serif;font-size:30px;color:#2c5f7f;margin:0 0 20px;letter-spacing:1px;">{{benefits_heading}}</h2>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td width="36" style="padding:0 12px 14px 0;vertical-align:top;font-size:22px;line-height:1.4;">{{benefit_1_icon}}</td>
+        <td style="padding-bottom:14px;vertical-align:top;">
+          <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:18px;color:#2c5f7f;margin:0 0 2px;letter-spacing:0.5px;">{{benefit_1_title}}</p>
+          <p style="font-family:'Outfit',Arial,sans-serif;font-size:14px;line-height:1.55;color:#555555;margin:0;">{{benefit_1_description}}</p>
+        </td>
+      </tr>
+      <tr>
+        <td width="36" style="padding:0 12px 14px 0;vertical-align:top;font-size:22px;line-height:1.4;">{{benefit_2_icon}}</td>
+        <td style="padding-bottom:14px;vertical-align:top;">
+          <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:18px;color:#2c5f7f;margin:0 0 2px;letter-spacing:0.5px;">{{benefit_2_title}}</p>
+          <p style="font-family:'Outfit',Arial,sans-serif;font-size:14px;line-height:1.55;color:#555555;margin:0;">{{benefit_2_description}}</p>
+        </td>
+      </tr>
+      <tr>
+        <td width="36" style="padding:0 12px 0 0;vertical-align:top;font-size:22px;line-height:1.4;">{{benefit_3_icon}}</td>
+        <td style="vertical-align:top;">
+          <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:18px;color:#2c5f7f;margin:0 0 2px;letter-spacing:0.5px;">{{benefit_3_title}}</p>
+          <p style="font-family:'Outfit',Arial,sans-serif;font-size:14px;line-height:1.55;color:#555555;margin:0;">{{benefit_3_description}}</p>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+<!-- VARIANT B: Checklist style (gold checkmarks) -->
+<tr>
+  <td style="padding:36px 44px;background-color:#ffffff;">
+    <h2 style="font-family:'Bebas Neue',Impact,sans-serif;font-size:28px;color:#2c5f7f;margin:0 0 18px;letter-spacing:1px;">{{benefits_heading}}</h2>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td width="28" style="padding:0 10px 12px 0;vertical-align:top;font-family:'Bebas Neue',Impact,sans-serif;font-size:18px;color:#FFB800;line-height:1.3;">&#10003;</td>
+        <td style="padding-bottom:12px;font-family:'Outfit',Arial,sans-serif;font-size:15px;line-height:1.55;color:#333333;vertical-align:top;">{{benefit_1_text}}</td>
+      </tr>
+      <tr>
+        <td width="28" style="padding:0 10px 12px 0;vertical-align:top;font-family:'Bebas Neue',Impact,sans-serif;font-size:18px;color:#FFB800;line-height:1.3;">&#10003;</td>
+        <td style="padding-bottom:12px;font-family:'Outfit',Arial,sans-serif;font-size:15px;line-height:1.55;color:#333333;vertical-align:top;">{{benefit_2_text}}</td>
+      </tr>
+      <tr>
+        <td width="28" style="padding:0 10px 12px 0;vertical-align:top;font-family:'Bebas Neue',Impact,sans-serif;font-size:18px;color:#FFB800;line-height:1.3;">&#10003;</td>
+        <td style="padding-bottom:12px;font-family:'Outfit',Arial,sans-serif;font-size:15px;line-height:1.55;color:#333333;vertical-align:top;">{{benefit_3_text}}</td>
+      </tr>
+      <tr>
+        <td width="28" style="padding:0 10px 0 0;vertical-align:top;font-family:'Bebas Neue',Impact,sans-serif;font-size:18px;color:#FFB800;line-height:1.3;">&#10003;</td>
+        <td style="font-family:'Outfit',Arial,sans-serif;font-size:15px;line-height:1.55;color:#333333;vertical-align:top;">{{benefit_4_text}}</td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+<!-- VARIANT C: Numbered steps (how it works / process) -->
+<tr>
+  <td style="padding:40px 44px;background-color:#2c5f7f;">
+    <h2 style="font-family:'Bebas Neue',Impact,sans-serif;font-size:32px;color:#FFB800;margin:0 0 24px;letter-spacing:1px;text-align:center;">{{steps_heading}}</h2>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td width="44" style="padding:0 16px 20px 0;vertical-align:top;">
+          <div style="width:36px;height:36px;background-color:#FFB800;border-radius:50%;text-align:center;line-height:36px;font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;color:#1a1a1a;">1</div>
+        </td>
+        <td style="padding-bottom:20px;vertical-align:top;">
+          <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;color:#ffffff;margin:0 0 4px;letter-spacing:0.5px;">{{step_1_title}}</p>
+          <p style="font-family:'Outfit',Arial,sans-serif;font-size:14px;line-height:1.55;color:#aaccdd;margin:0;">{{step_1_description}}</p>
+        </td>
+      </tr>
+      <tr>
+        <td width="44" style="padding:0 16px 20px 0;vertical-align:top;">
+          <div style="width:36px;height:36px;background-color:#FFB800;border-radius:50%;text-align:center;line-height:36px;font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;color:#1a1a1a;">2</div>
+        </td>
+        <td style="padding-bottom:20px;vertical-align:top;">
+          <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;color:#ffffff;margin:0 0 4px;letter-spacing:0.5px;">{{step_2_title}}</p>
+          <p style="font-family:'Outfit',Arial,sans-serif;font-size:14px;line-height:1.55;color:#aaccdd;margin:0;">{{step_2_description}}</p>
+        </td>
+      </tr>
+      <tr>
+        <td width="44" style="padding:0 16px 0 0;vertical-align:top;">
+          <div style="width:36px;height:36px;background-color:#FFB800;border-radius:50%;text-align:center;line-height:36px;font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;color:#1a1a1a;">3</div>
+        </td>
+        <td style="vertical-align:top;">
+          <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;color:#ffffff;margin:0 0 4px;letter-spacing:0.5px;">{{step_3_title}}</p>
+          <p style="font-family:'Outfit',Arial,sans-serif;font-size:14px;line-height:1.55;color:#aaccdd;margin:0;">{{step_3_description}}</p>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+
+<!-- ===================================================================================
+     COMPONENT: IMAGE GALLERY
+     Variants: 2-col grid, 3-col grid, full-bleed with caption
+     =================================================================================== -->
+
+<!-- VARIANT A: 2-col image grid with captions -->
+<tr>
+  <td style="padding:28px 16px;background-color:#ffffff;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td width="50%" class="mobile-stack" style="padding:8px;">
+        <a href="{{gallery_1_link}}" style="display:block;text-decoration:none;">
+          <img src="{{gallery_1_image}}" alt="{{gallery_1_alt}}" width="272" style="display:block;width:100%;height:auto;border:0;border-radius:4px;">
+        </a>
+        <p style="font-family:'Outfit',Arial,sans-serif;font-size:13px;color:#888888;margin:8px 0 0;text-align:center;">{{gallery_1_caption}}</p>
+      </td>
+      <td width="50%" class="mobile-stack" style="padding:8px;">
+        <a href="{{gallery_2_link}}" style="display:block;text-decoration:none;">
+          <img src="{{gallery_2_image}}" alt="{{gallery_2_alt}}" width="272" style="display:block;width:100%;height:auto;border:0;border-radius:4px;">
+        </a>
+        <p style="font-family:'Outfit',Arial,sans-serif;font-size:13px;color:#888888;margin:8px 0 0;text-align:center;">{{gallery_2_caption}}</p>
+      </td>
+    </tr>
+    </table>
+  </td>
+</tr>
+
+<!-- VARIANT B: 3-col image grid (no captions, compact) -->
+<tr>
+  <td style="padding:4px 4px 0;background-color:#ffffff;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td width="33%" style="padding:4px;line-height:0;font-size:0;">
+        <img src="{{gallery_1_image}}" alt="{{gallery_1_alt}}" width="192" style="display:block;width:100%;height:auto;border:0;">
+      </td>
+      <td width="33%" style="padding:4px;line-height:0;font-size:0;">
+        <img src="{{gallery_2_image}}" alt="{{gallery_2_alt}}" width="192" style="display:block;width:100%;height:auto;border:0;">
+      </td>
+      <td width="33%" style="padding:4px;line-height:0;font-size:0;">
+        <img src="{{gallery_3_image}}" alt="{{gallery_3_alt}}" width="192" style="display:block;width:100%;height:auto;border:0;">
+      </td>
+    </tr>
+    </table>
+  </td>
+</tr>
+
+<!-- VARIANT C: Full-bleed image with styled caption below -->
+<tr>
+  <td style="padding:0;">
+    <img src="{{gallery_1_image}}" alt="{{gallery_1_alt}}" width="600" style="display:block;width:100%;height:auto;border:0;">
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:13px;color:#888888;margin:0;padding:10px 44px;background-color:#f9f9f9;text-align:center;font-style:italic;border-bottom:1px solid #eeeeee;">{{gallery_1_caption}}</p>
+  </td>
+</tr>
+
+
+<!-- ===================================================================================
+     COMPONENT: DIVIDERS & SPACERS
+     Use between sections to control rhythm and breathing room.
+     =================================================================================== -->
+
+<!-- Thin hairline rule (neutral) -->
+<tr><td style="padding:0 44px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="height:1px;background-color:#eeeeee;font-size:0;line-height:0;">&nbsp;</td></tr></table></td></tr>
+
+<!-- Thick gold accent rule (use after headers or before hero sections) -->
+<tr><td style="padding:0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="height:5px;background-color:#FFB800;font-size:0;line-height:0;">&nbsp;</td></tr></table></td></tr>
+
+<!-- Centered decorative rule with dots -->
+<tr>
+  <td style="padding:8px 44px;text-align:center;">
+    <span style="font-family:'Bebas Neue',Impact,sans-serif;font-size:14px;letter-spacing:8px;color:#FFB800;">&bull; &bull; &bull;</span>
+  </td>
+</tr>
+
+<!-- Spacer 8px -->
+<tr><td style="height:8px;font-size:0;line-height:0;">&nbsp;</td></tr>
+
+<!-- Spacer 16px -->
+<tr><td style="height:16px;font-size:0;line-height:0;">&nbsp;</td></tr>
+
+<!-- Spacer 24px -->
+<tr><td style="height:24px;font-size:0;line-height:0;">&nbsp;</td></tr>
+
+<!-- Spacer 40px -->
+<tr><td style="height:40px;font-size:0;line-height:0;">&nbsp;</td></tr>
+
+
+<!-- ===================================================================================
+     COMPONENT: ANNOUNCEMENT / URGENCY STRIP
+     Variants: gold feature strip, red urgency, subtle info
+     =================================================================================== -->
+
+<!-- VARIANT A: Bold gold strip — feature callout, celebration, milestone -->
+<tr>
+  <td style="background-color:#FFB800;padding:18px 44px;text-align:center;">
+    <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:24px;letter-spacing:2px;color:#1a1a1a;margin:0;line-height:1.1;">{{announcement_headline}}</p>
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:14px;color:#333333;margin:5px 0 0;">{{announcement_subtext}}</p>
+  </td>
+</tr>
+
+<!-- VARIANT B: Red urgency strip ("LIMITED TIME", "ENDS SOON") -->
+<tr>
+  <td style="background-color:#D32F2F;padding:14px 44px;text-align:center;">
+    <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;letter-spacing:3px;color:#ffffff;margin:0;line-height:1.1;">&#9660; {{urgency_text}} &#9660;</p>
+  </td>
+</tr>
+
+<!-- VARIANT C: Striped urgency strip (alternating pattern using borders) -->
+<tr>
+  <td style="background-color:#D32F2F;padding:12px 44px;text-align:center;border-top:3px solid #FFB800;border-bottom:3px solid #FFB800;">
+    <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:18px;letter-spacing:4px;color:#ffffff;margin:0;">{{urgency_text}}</p>
+  </td>
+</tr>
+
+<!-- VARIANT D: Subtle teal info strip -->
+<tr>
+  <td style="background-color:#e8f0f5;padding:12px 44px;text-align:center;border-top:1px solid #d0dde8;border-bottom:1px solid #d0dde8;">
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:14px;color:#2c5f7f;margin:0;">ℹ️ &nbsp;{{info_strip_text}}</p>
+  </td>
+</tr>
+
+<!-- VARIANT E: Countdown / Limited stock strip on dark background -->
+<tr>
+  <td style="background-color:#1a1a1a;padding:16px 44px;text-align:center;">
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#FFB800;margin:0 0 4px;">{{urgency_label}}</p>
+    <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:26px;letter-spacing:2px;color:#ffffff;margin:0;">{{urgency_text}}</p>
+  </td>
+</tr>
+
+
+<!-- ===================================================================================
+     COMPONENT: SOCIAL ICONS ROW
+     Standard horizontal row with Instagram, TikTok, Facebook
+     =================================================================================== -->
+
+<!-- VARIANT A: Social icons centered on navy (for use within footer or standalone) -->
+<tr>
+  <td style="background-color:#2c5f7f;padding:20px 44px;text-align:center;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
+    <tr>
+      <td style="padding:0 10px;">
+        <a href="{{footer_instagram_link}}" style="display:inline-block;text-decoration:none;">
+          <img src="{{instagram_icon_image}}" alt="Instagram" width="32" height="32" style="display:block;width:32px;height:32px;border:0;border-radius:6px;">
+        </a>
+      </td>
+      <td style="padding:0 10px;">
+        <a href="{{footer_tiktok_link}}" style="display:inline-block;text-decoration:none;">
+          <img src="{{tiktok_icon_image}}" alt="TikTok" width="32" height="32" style="display:block;width:32px;height:32px;border:0;border-radius:6px;">
+        </a>
+      </td>
+      <td style="padding:0 10px;">
+        <a href="{{footer_facebook_link}}" style="display:inline-block;text-decoration:none;">
+          <img src="{{facebook_icon_image}}" alt="Facebook" width="32" height="32" style="display:block;width:32px;height:32px;border:0;border-radius:6px;">
+        </a>
+      </td>
+    </tr>
+    </table>
+  </td>
+</tr>
+
+<!-- VARIANT B: Social icons with text labels on white background -->
+<tr>
+  <td style="background-color:#ffffff;padding:24px 44px;text-align:center;border-top:1px solid #eeeeee;">
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#888888;margin:0 0 14px;">Follow the Crunch</p>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
+    <tr>
+      <td style="padding:0 14px;text-align:center;">
+        <a href="{{footer_instagram_link}}" style="display:block;text-decoration:none;">
+          <img src="{{instagram_icon_image}}" alt="Instagram" width="28" height="28" style="display:block;width:28px;height:28px;border:0;margin:0 auto 5px;">
+          <span style="font-family:'Outfit',Arial,sans-serif;font-size:11px;color:#888888;">Instagram</span>
+        </a>
+      </td>
+      <td style="padding:0 14px;text-align:center;">
+        <a href="{{footer_tiktok_link}}" style="display:block;text-decoration:none;">
+          <img src="{{tiktok_icon_image}}" alt="TikTok" width="28" height="28" style="display:block;width:28px;height:28px;border:0;margin:0 auto 5px;">
+          <span style="font-family:'Outfit',Arial,sans-serif;font-size:11px;color:#888888;">TikTok</span>
+        </a>
+      </td>
+      <td style="padding:0 14px;text-align:center;">
+        <a href="{{footer_facebook_link}}" style="display:block;text-decoration:none;">
+          <img src="{{facebook_icon_image}}" alt="Facebook" width="28" height="28" style="display:block;width:28px;height:28px;border:0;margin:0 auto 5px;">
+          <span style="font-family:'Outfit',Arial,sans-serif;font-size:11px;color:#888888;">Facebook</span>
+        </a>
+      </td>
+    </tr>
+    </table>
+  </td>
+</tr>
+
+
+<!-- ===================================================================================
+     COMPONENT: FOOTER
+     Variants: full footer (logo + social + legal), minimal footer
+     =================================================================================== -->
+
+<!-- VARIANT A: Full footer — logo, social icons, tagline, legal -->
+<tr>
+  <td style="background-color:#2c5f7f;padding:36px 30px 28px;text-align:center;border-top:4px solid #FFB800;">
+    <!-- Logo -->
+    <a href="https://www.yaysbeefcrisps.com" style="display:inline-block;text-decoration:none;margin-bottom:16px;">
+      <img src="{{footer_logo_image}}" alt="Yay's Beef Crisps" width="120" style="display:block;width:120px;height:auto;border:0;margin:0 auto;">
+    </a>
+    <!-- Social icons -->
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 18px;">
+    <tr>
+      <td style="padding:0 8px;">
+        <a href="{{footer_instagram_link}}" style="display:inline-block;text-decoration:none;">
+          <img src="{{instagram_icon_image}}" alt="Instagram" width="26" height="26" style="display:block;width:26px;height:26px;border:0;opacity:0.8;">
+        </a>
+      </td>
+      <td style="padding:0 8px;">
+        <a href="{{footer_tiktok_link}}" style="display:inline-block;text-decoration:none;">
+          <img src="{{tiktok_icon_image}}" alt="TikTok" width="26" height="26" style="display:block;width:26px;height:26px;border:0;opacity:0.8;">
+        </a>
+      </td>
+      <td style="padding:0 8px;">
+        <a href="{{footer_facebook_link}}" style="display:inline-block;text-decoration:none;">
+          <img src="{{facebook_icon_image}}" alt="Facebook" width="26" height="26" style="display:block;width:26px;height:26px;border:0;opacity:0.8;">
+        </a>
+      </td>
+    </tr>
+    </table>
+    <!-- Tagline -->
+    <p style="font-family:'Bebas Neue',Impact,sans-serif;font-size:14px;letter-spacing:3px;color:#FFB800;margin:0 0 14px;text-transform:uppercase;">{{footer_tagline}}</p>
+    <!-- Legal copy -->
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:12px;line-height:1.6;color:#aaccdd;margin:0 0 12px;">{{legal_text}}</p>
+    <!-- Address -->
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:11px;color:#aaccdd;margin:0 0 14px;opacity:0.7;">{{company_address}}</p>
+    <!-- Unsubscribe / Preferences -->
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:11px;color:#aaccdd;margin:0;">
+      <a href="{{unsubscribe_link}}" style="color:#aaccdd;text-decoration:underline;">Unsubscribe</a>
+      <span style="color:#aaccdd;padding:0 8px;">|</span>
+      <a href="{{preferences_link}}" style="color:#aaccdd;text-decoration:underline;">Email Preferences</a>
+    </p>
+    <!-- Copyright -->
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:10px;color:#aaccdd;margin:12px 0 0;opacity:0.5;">&copy; {{current_year}} Yay's Beef Crisps. All rights reserved.</p>
+  </td>
+</tr>
+
+<!-- VARIANT B: Minimal footer — just legal + unsubscribe on light background -->
+<tr>
+  <td style="background-color:#f4f4f4;padding:24px 44px;text-align:center;border-top:1px solid #eeeeee;">
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:12px;line-height:1.6;color:#999999;margin:0 0 8px;">{{legal_text}}</p>
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:11px;color:#bbbbbb;margin:0 0 8px;">{{company_address}}</p>
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:11px;color:#bbbbbb;margin:0;">
+      <a href="{{unsubscribe_link}}" style="color:#bbbbbb;text-decoration:underline;">Unsubscribe</a>
+      <span style="padding:0 6px;color:#cccccc;">|</span>
+      <a href="{{preferences_link}}" style="color:#bbbbbb;text-decoration:underline;">Manage Preferences</a>
+    </p>
+  </td>
+</tr>
+
+<!-- VARIANT C: Dark charcoal footer (use after dark-themed email bodies) -->
+<tr>
+  <td style="background-color:#1a1a1a;padding:32px 30px;text-align:center;border-top:3px solid #FFB800;">
+    <a href="https://www.yaysbeefcrisps.com" style="display:inline-block;text-decoration:none;margin-bottom:16px;">
+      <img src="{{footer_logo_image}}" alt="Yay's Beef Crisps" width="110" style="display:block;width:110px;height:auto;border:0;margin:0 auto;">
+    </a>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 16px;">
+    <tr>
+      <td style="padding:0 8px;">
+        <a href="{{footer_instagram_link}}" style="display:inline-block;text-decoration:none;">
+          <img src="{{instagram_icon_image}}" alt="Instagram" width="24" height="24" style="display:block;width:24px;height:24px;border:0;opacity:0.7;">
+        </a>
+      </td>
+      <td style="padding:0 8px;">
+        <a href="{{footer_tiktok_link}}" style="display:inline-block;text-decoration:none;">
+          <img src="{{tiktok_icon_image}}" alt="TikTok" width="24" height="24" style="display:block;width:24px;height:24px;border:0;opacity:0.7;">
+        </a>
+      </td>
+      <td style="padding:0 8px;">
+        <a href="{{footer_facebook_link}}" style="display:inline-block;text-decoration:none;">
+          <img src="{{facebook_icon_image}}" alt="Facebook" width="24" height="24" style="display:block;width:24px;height:24px;border:0;opacity:0.7;">
+        </a>
+      </td>
+    </tr>
+    </table>
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:11px;line-height:1.6;color:#666666;margin:0 0 8px;">{{legal_text}} &mdash; {{company_address}}</p>
+    <p style="font-family:'Outfit',Arial,sans-serif;font-size:11px;color:#555555;margin:0;">
+      <a href="{{unsubscribe_link}}" style="color:#555555;text-decoration:underline;">Unsubscribe</a>
+      <span style="padding:0 6px;color:#444444;">|</span>
+      <a href="{{preferences_link}}" style="color:#555555;text-decoration:underline;">Preferences</a>
+    </p>
+  </td>
+</tr>

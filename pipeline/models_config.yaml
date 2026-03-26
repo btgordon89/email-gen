@@ -1,0 +1,36 @@
+# Model configuration for email_gen pipeline
+#
+# Set the model for each step here.
+# Priority order: environment variable > this file > hardcoded default
+#
+# Supported providers:
+#   Google:    gemini-2.5-pro, gemini-2.5-flash, gemini-2.0-flash, gemini-3-pro-image-preview
+#   Anthropic: claude-opus-4-6, claude-sonnet-4-6, claude-sonnet-4-5, claude-haiku-4-5
+#
+# Note: step4_images (image generation) must use a Google Gemini image model.
+#       All other steps support both Google and Anthropic models.
+
+available_models:
+  google:
+    - gemini-2.5-pro
+    - gemini-2.5-flash
+    - gemini-2.0-flash
+    - gemini-3-pro-image-preview
+  anthropic:
+    - claude-opus-4-6
+    - claude-sonnet-4-6
+    - claude-sonnet-4-5
+    - claude-haiku-4-5
+
+steps:
+  step1_brief: claude-opus-4-6
+  step2a_structure: claude-sonnet-4-6
+  step2b_discount: claude-sonnet-4-6
+  step2c_products: claude-sonnet-4-6
+  step2d_copy: claude-opus-4-6
+  step2e_links: claude-sonnet-4-6
+  step3_cohesion: claude-opus-4-6
+  step4_images: gemini-3-pro-image-preview
+  step5_assembly: claude-sonnet-4-6
+  step7_review: claude-opus-4-6
+  step7b_patch: claude-sonnet-4-6

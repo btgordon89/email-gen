@@ -1,0 +1,19 @@
+email_theme: "Summer BBQ sale"
+primary_goal: drive_sales
+target_audience: all_subscribers
+tone: bold_energetic
+key_message: "Yay's crispy beef crisps are the perfect BBQ companion"
+seasonal_hook: "Summer BBQ season"
+urgency: ends_this_weekend
+discount_type: percentage
+discount_value: "20%"
+discount_conditions: "First order only"
+generate_discount_code: true
+product_focus: beef_crisps
+num_featured_products: 3
+featured_products: []
+selection_criteria: best_sellers
+cta_destination: collection_page
+cta_specific_product: ""
+cta_custom_url: ""
+additional_notes: "We just got featured on TikTok"

@@ -1,0 +1,28 @@
+# Generated campaign outputs (private data)
+output/
+
+# Campaign questionnaires (private)
+my_campaign.yaml
+easter_campaign.yaml
+khmer_new_year.yaml
+
+# Environment / credentials
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Local Claude Code settings
+.claude/
+
+# OS
+.DS_Store
