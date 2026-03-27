@@ -26,8 +26,8 @@ def _build_static_tokens(questionnaire: Dict[str, Any]) -> Dict[str, str]:
 
 
 def _build_social_tokens() -> Dict[str, str]:
-    """Static social/footer tokens with real Yay's links and icon URLs."""
-    _LOGO = "https://cdn.shopify.com/s/files/1/0671/3530/8083/files/yays-logo.png"
+    """Static social/footer tokens — all values sourced from env vars via config."""
+    _LOGO = config.brand_logo_url()
     _IG_ICON = "https://cdn.klaviyo.com/icons/instagram.png"
     _TT_ICON = "https://cdn.klaviyo.com/icons/tiktok.png"
     _FB_ICON = "https://cdn.klaviyo.com/icons/facebook.png"
@@ -36,9 +36,9 @@ def _build_social_tokens() -> Dict[str, str]:
         "{{instagram_icon_image}}": _IG_ICON,
         "{{tiktok_icon_image}}": _TT_ICON,
         "{{facebook_icon_image}}": _FB_ICON,
-        "{{footer_instagram_link}}": "https://www.instagram.com/snackyays/",
-        "{{footer_tiktok_link}}": "https://www.tiktok.com/@snackyays",
-        "{{footer_facebook_link}}": "https://www.facebook.com/snackyays",
+        "{{footer_instagram_link}}": config.brand_instagram_url(),
+        "{{footer_tiktok_link}}": config.brand_tiktok_url(),
+        "{{footer_facebook_link}}": config.brand_facebook_url(),
         "{{footer_logo_image}}": _LOGO,
         "{{footer_signoff}}": "The Yay's Team",
         "{{footer_social}}": "",

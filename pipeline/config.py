@@ -106,6 +106,16 @@ def klaviyo_api_key() -> str:
     return key
 
 
+def brand_storefront_url() -> str:
+    """Brand public storefront URL. Set BRAND_STOREFRONT_URL in .env."""
+    return os.getenv("BRAND_STOREFRONT_URL", "").strip()
+
+
+def brand_logo_url() -> str:
+    """Brand logo image URL (hosted). Set BRAND_LOGO_URL in .env."""
+    return os.getenv("BRAND_LOGO_URL", "").strip()
+
+
 def brand_instagram_url() -> str:
     """Brand Instagram profile URL. Set BRAND_INSTAGRAM_URL in .env."""
     return os.getenv("BRAND_INSTAGRAM_URL", "").strip()

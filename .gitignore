@@ -1,10 +1,9 @@
 # Generated campaign outputs (private data)
 output/
 
-# Campaign questionnaires (private)
-my_campaign.yaml
-easter_campaign.yaml
-khmer_new_year.yaml
+# Campaign questionnaires (private — exclude all root-level YAMLs except the template)
+/*.yaml
+!questionnaire_template.yaml
 
 # Environment / credentials
 .env

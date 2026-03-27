@@ -94,4 +94,4 @@ def create_discount_code(price_rule_id: int, code: str) -> Dict[str, Any]:
 
 def get_shop_url() -> str:
     """Return the public storefront URL."""
-    return "https://snackyays.com"
+    return config.brand_storefront_url()

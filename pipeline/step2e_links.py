@@ -118,9 +118,10 @@ class Step2eLinks(base_step.BaseStep):
             else "BRAND SOCIAL URLS: not configured — leave tokens as-is if unsure"
         )
 
+        storefront_url = config.brand_storefront_url() or "(storefront URL not configured — set BRAND_STOREFRONT_URL in .env)"
         return f"""Generate all URLs for this email campaign.
 
-STOREFRONT BASE: https://snackyays.com
+STOREFRONT BASE: {storefront_url}
 
 LINK TOKENS TO FILL:
 {link_tokens_text}
